@@ -5,29 +5,35 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Sandbox World!");
+        Console.WriteLine("Nurse");
+        Costume nurse = new();
+        nurse.headWear = "face mask";
+        nurse.handWear = "nitrile gloves";
+        nurse.shoes = "orthopedic shoes";
+        nurse.upperGarments = "scrubs";
+        nurse.lowerGarments = "scrubs";
+        nurse.accessory = "stethoscope";
 
-        List<int> numberList;
-        numberList = new();
+        Console.WriteLine("Detective");
+        Costume detective = new();
+        detective.headWear = "fedora";
+        detective.handWear = "leather";
+        detective.shoes = "loafers";
+        detective.upperGarments = "trenchcoat";
+        detective.lowerGarments = "slacks";
+        detective.accessory = "magnifying glass";
 
-        int input = -1;
-        while (input != 0)
-        {
-            Console.Write("Enter something");
-            string inputString = Console.ReadLine();
-            input = int.Parse(inputString);
-            
-            if(input != 0)
-            {
-                numberList.Add(input);
-            }
+        Console.WriteLine("Cowbo");
+        Costume rancher = new();
+        rancher.headWear = "cowboy hat";
+        rancher.handWear = "work";
+        rancher.shoes = "boots";
+        rancher.upperGarments = "vest";
+        rancher.lowerGarments = "jeans";
+        rancher.accessory = "revolver";
 
-        }
-
-        foreach (int item in numberList)
-        {
-            Console.WriteLine(item);
-        }
-
+        nurse.ShowWardrobe();
+        detective.ShowWardrobe();
+        rancher.ShowWardrobe();
     }
 }
