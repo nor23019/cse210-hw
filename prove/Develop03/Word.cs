@@ -2,7 +2,7 @@ class Word {
     private string Text;
     public bool IsHidden;
 
-    public Word(string text) {              //word constructor
+    public Word(string text) {              //Word constructor
         Text = text;
         IsHidden = false;
     }
@@ -14,7 +14,7 @@ class Word {
     public override string ToString(){      //Returns the string to hide the word
     if (IsHidden)
     {
-        return "_____";
+        return "____";
     }
     else
     {

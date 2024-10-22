@@ -6,7 +6,14 @@ class Scripture
 
     public Scripture(ScriptureReference reference, string text) {
         Reference = reference;
-        Words = text.Split(' ').Select(w => new Word(w)).ToList();
+        Words = new List<Word>();
+        string[] wordsArray = text.Split(' ');
+
+        foreach (string wordText in wordsArray)
+        {
+            Word word = new Word(wordText);
+            Words.Add(word);
+        }
     }
 
     public void DisplayScripture() {
@@ -18,18 +25,24 @@ class Scripture
         Console.WriteLine();
     }
 
-    public void HideRandomWords() {
-        int wordsToHide = 3; 
-        List<Word> visibleWords = Words.Where(w => !w.IsHidden).ToList();
+    public void HideRandomWords() {         // Hides random words
+    int wordsToHide = 3; 
+    List<Word> visibleWords = new List<Word>(); // creates a list object of visible words
 
-        for (int i = 0; i < wordsToHide && visibleWords.Count > 0; i++) {
-            int index = random.Next(visibleWords.Count);
-            visibleWords[index].Hide();
-            visibleWords.RemoveAt(index);
+    foreach (Word word in Words) {              // Adds any unhiden word to a list
+        if (!word.IsHidden) {  
+            visibleWords.Add(word);  
         }
     }
 
-    public bool AllWordsHidden() {
+    for (int i = 0; i < wordsToHide && visibleWords.Count > 0; i++) { // removes words that are hidden
+        int index = random.Next(visibleWords.Count);
+        visibleWords[index].Hide();
+        visibleWords.RemoveAt(index);
+    }
+}
+
+    public bool AllWordsHidden() {   // Checks if any words in Words are hidden
     foreach (Word word in Words) {
         if (!word.IsHidden) {
             return false;
