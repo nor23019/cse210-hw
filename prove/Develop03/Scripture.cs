@@ -26,21 +26,21 @@ class Scripture
     }
 
     public void HideRandomWords() {         // Hides random words
-    int wordsToHide = 3; 
-    List<Word> visibleWords = new List<Word>(); // creates a list object of visible words
+        int wordsToHide = 3; 
+        List<Word> visibleWords = new List<Word>(); // creates a list object of visible words
 
-    foreach (Word word in Words) {              // Adds any unhiden word to a list
-        if (!word.IsHidden) {  
-            visibleWords.Add(word);  
+        foreach (Word word in Words) {              // Adds any unhiden word to a list
+            if (!word.IsHidden) {  
+                visibleWords.Add(word);  
+            }
+        }
+
+        for (int i = 0; i < wordsToHide && visibleWords.Count > 0; i++) { // removes words that are hidden
+            int index = random.Next(visibleWords.Count);
+            visibleWords[index].Hide();
+            visibleWords.RemoveAt(index);
         }
     }
-
-    for (int i = 0; i < wordsToHide && visibleWords.Count > 0; i++) { // removes words that are hidden
-        int index = random.Next(visibleWords.Count);
-        visibleWords[index].Hide();
-        visibleWords.RemoveAt(index);
-    }
-}
 
     public bool AllWordsHidden() {   // Checks if any words in Words are hidden
     foreach (Word word in Words) {
