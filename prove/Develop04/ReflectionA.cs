@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 class ReflectionA : Activity
 {
-    private static List<string> Prompts = new()
+    private static List<string> _prompts = new()
     {
         "Think of a time when you stood up for someone else.",
         "Think of a time when you did something really difficult.",
@@ -24,7 +24,7 @@ class ReflectionA : Activity
         DisplayWelcome("Reflection", "reflect on times in your life when you have shown strength and resilience");
 
         Random random = new Random();
-        Console.WriteLine(Prompts[random.Next(Prompts.Count)]);
+        Console.WriteLine(_prompts[random.Next(_prompts.Count)]);
         DisplayAnimationSpinner();
 
         Stopwatch stopwatch = new Stopwatch();
