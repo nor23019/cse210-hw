@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        bool running = true;
+        bool Running = true;
 
         do
         {
@@ -45,13 +45,13 @@ class Program
 
                 case "5":
                     Console.Clear();
-                    running = false;
+                    Running = false;
                     break;
 
                 default:
                     Console.WriteLine("Invalid option. Please select again.");
                     break;
             }
-        } while (running);
+        } while (Running);
     }
 }

@@ -1,7 +1,7 @@
 using System.Diagnostics;
 class WordGameA : Activity
 {
-    private static List<char> alphabet = new()
+    private static List<char> Alphabet = new()
     {
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
         'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
@@ -20,7 +20,7 @@ class WordGameA : Activity
             List<char> selectedLetters = new List<char>();
             for (int i = 0; i < 5; i++)
             {
-                char randomLetter = alphabet[random.Next(alphabet.Count)];
+                char randomLetter = Alphabet[random.Next(Alphabet.Count)];
                 selectedLetters.Add(randomLetter);
             }
 

@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 class ReflectionA : Activity
 {
-    private static readonly List<string> prompts = new()
+    private static List<string> Prompts = new()
     {
         "Think of a time when you stood up for someone else.",
         "Think of a time when you did something really difficult.",
@@ -11,7 +11,7 @@ class ReflectionA : Activity
         "Think of a time when you did something truly selfless."
     };
 
-    private static readonly List<string> questions = new List<string>
+    private static readonly List<string> Questions = new()
     {
         "Why was this experience meaningful to you?",
         "Have you ever done anything like this before?",
@@ -24,7 +24,7 @@ class ReflectionA : Activity
         DisplayWelcome("Reflection", "reflect on times in your life when you have shown strength and resilience");
 
         Random random = new Random();
-        Console.WriteLine(prompts[random.Next(prompts.Count)]);
+        Console.WriteLine(Prompts[random.Next(Prompts.Count)]);
         DisplayAnimationSpinner();
 
         Stopwatch stopwatch = new Stopwatch();
@@ -32,7 +32,7 @@ class ReflectionA : Activity
 
         while (stopwatch.Elapsed.TotalSeconds < time)
         {
-            Console.WriteLine(questions[random.Next(questions.Count)]);
+            Console.WriteLine(Questions[random.Next(Questions.Count)]);
             DisplayAnimationSpinner();
             Thread.Sleep(1000);
             Console.ReadLine();

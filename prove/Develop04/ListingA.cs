@@ -2,7 +2,7 @@ using System.Diagnostics;
 
 class ListingA : Activity
 {
-    private static readonly List<string> prompts = new()
+    private static List<string> Prompts = new()
     {
         "Who are people that you appreciate?",
         "What are personal strengths of yours?",
@@ -16,7 +16,7 @@ class ListingA : Activity
         DisplayWelcome("Listing", "reflect on the good things in your life by listing them");
 
         Random random = new Random();
-        Console.WriteLine(prompts[random.Next(prompts.Count)]);
+        Console.WriteLine(Prompts[random.Next(Prompts.Count)]);
         DisplayAnimationSpinner(); 
 
         Stopwatch stopwatch = new Stopwatch();
