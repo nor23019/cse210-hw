@@ -1,0 +1,2 @@
+0
+ChecklistGoal,Go to church,Go to church every sunday,100,200,3,0
